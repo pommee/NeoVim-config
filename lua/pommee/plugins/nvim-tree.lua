@@ -16,6 +16,7 @@ return {
     nvimtree.setup({
       view = {
         width = 35,
+        relativenumber = true,
       },
       -- change folder arrow icons
       renderer = {
@@ -25,13 +26,12 @@ return {
         icons = {
           glyphs = {
             folder = {
-              arrow_closed = "→", -- arrow when folder is closed
-              arrow_open = "↓", -- arrow when folder is open
+              arrow_closed = "", -- arrow when folder is closed
+              arrow_open = "", -- arrow when folder is open
             },
           },
         },
       },
-
       -- disable window_picker for
       -- explorer to work well with
       -- window splits
@@ -51,7 +51,7 @@ return {
     })
 
     -- set keymaps
-    local keymap = vim.keymap
+    local keymap = vim.keymap -- for conciseness
 
     keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
   end,
